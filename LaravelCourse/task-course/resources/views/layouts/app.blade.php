@@ -2,6 +2,7 @@
     <html>
         <head>
             <title> Laravel 12 Task List App</title>
+            @yield('styles')
         </head>
 
         <body>
@@ -9,6 +10,9 @@
                 @yield('title')
             </h1>
             <div>
+                @if(session()->has('success'))
+                    <div>{{session('success')}}</div>
+                @endif
                 @yield('content')
             </div>
         </body>
