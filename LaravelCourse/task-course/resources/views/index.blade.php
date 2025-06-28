@@ -5,7 +5,12 @@
 @endsection
 
 
+
 @section('content')
+    <div>
+        <a href="{{route('tasks.create')}}">Add task</a>
+    </div>
+
     <div>
         @forelse($tasks as $task)
             <div>
@@ -16,5 +21,14 @@
                 There are no tasks!
             </div>
         @endforelse
+            @if($tasks->count())
+              <div>
+                  <nav>
+                     {{$tasks->links()}}
+                  </nav>
+              </div>
+            @endif
     </div>
+
+
 @endsection
