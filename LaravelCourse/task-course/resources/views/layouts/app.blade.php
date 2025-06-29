@@ -1,12 +1,25 @@
 <!DOCTYPE html>
     <html>
-        <head>
-            <title> Laravel 12 Task List App</title>
-            @vite('resources/css/app.css')
-            @yield('styles')
-        </head>
+        <head class="mb-5">
+    <title>Laravel 12 Task List App</title>
 
-        <body class="container mx-auto mt-10 mb-10 max-w-lg">
+    {{-- Load compiled CSS --}}
+    @vite('resources/css/app.css')
+
+    {{-- blade-formatter-disable --}}
+    <style type="text/tailwindcss">
+        .btn {
+            @apply rounded-md px-2 py-1 text-center font-medium shadow-sm ring-1 ring-slate-700/90
+            hover:bg-slate-50 text-slate-500;
+        }
+    </style>
+    {{-- blade-formatter-enable --}}
+
+    @yield('styles')
+</head>
+
+
+        <body class="container mx-auto mt-10 mb-10 max-w-lg ">
             <h1>
                 @yield('title')
             </h1>
