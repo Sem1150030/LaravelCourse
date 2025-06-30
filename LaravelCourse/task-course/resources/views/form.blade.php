@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', isset($task) ? 'Edit Task' : 'Add Task')
+@section('title')
+<p class="text-2xl font-bold">{{ isset($task) ? 'Edit Task: '. $task->title  : 'Add Task'}} </p>
+@endsection
 
 @section('styles')
     <style>
@@ -47,7 +49,7 @@
         </div>
 
         <div>
-            <button type="submit">@isset($task)
+            <button class="btn" type="submit">@isset($task)
                     Update Task
                 @else
                     Add Task
